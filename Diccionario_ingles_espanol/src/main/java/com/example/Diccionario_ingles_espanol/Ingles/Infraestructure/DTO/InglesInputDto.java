@@ -23,7 +23,7 @@ public class InglesInputDto {
 
     private Date fecha_modif;
 
-
+    private Espanol espanol;
     public Ingles dameIngles() {
 
         Ingles in = new Ingles();
@@ -31,7 +31,7 @@ public class InglesInputDto {
         in.setPalabra(this.getPalabra());
         in.setFecha_alta(this.getFecha_alta());
         in.setFecha_modif(this.getFecha_modif());
-
+        in.setEspanol(this.getEspanol());
         return in;
 
     }

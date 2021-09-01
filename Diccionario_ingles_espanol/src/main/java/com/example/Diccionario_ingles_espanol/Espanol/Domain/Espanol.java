@@ -16,7 +16,6 @@ import java.util.List;
 @Entity
 @Data
 
-
 public class Espanol {
 
     @Id
@@ -30,10 +29,10 @@ public class Espanol {
     private String descripcion;
 
     @NotNull
-    @Temporal(TemporalType.DATE)
+    //@Temporal(TemporalType.DATE)
     private Date fecha_alta = new Date();
 
-    private Date fecha_modif;
+    private Date fecha_modif = new Date(); //fecha_modif se pone automatico para que cuando hagamos el put se actualice automaticamente con el dia actual.
 
     @OneToMany(mappedBy="espanol")
     private List<Ingles> ingles;
@@ -63,12 +62,10 @@ public class Espanol {
 
     public void actualizaespanol(EspanoInputDto e){
 
-        if (e.getPalabra()!= null) setPalabra(e.getPalabra()); // hay que poner el @Data en PersonaOutputDTO para que coja los setter y getter
-        if (e.getDescripcion()!=null) setDescripcion(e.getDescripcion());  //todo igual que el if de arriba y crear la función para cambiar los datos de una función.
+        if (e.getPalabra()!= null) setPalabra(e.getPalabra());
+        if (e.getDescripcion()!=null) setDescripcion(e.getDescripcion());
         if (e.getFecha_modif()!=null) setFecha_modif(e.getFecha_modif());
 
     }
-
-
 
 }

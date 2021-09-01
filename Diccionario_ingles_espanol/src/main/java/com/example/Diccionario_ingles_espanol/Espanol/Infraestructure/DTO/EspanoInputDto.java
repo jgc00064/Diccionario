@@ -16,16 +16,16 @@ public class EspanoInputDto {
     int id;
 
     @NotNull
-    @Column(unique=true)
+    @Column(unique=true) // Con esta linea hacemos que no se repitan palabras.
     String palabra;
 
     String descripcion;
 
     @NotNull
 
-    Date fecha_alta = new Date(); // Con esta linea se actualiza la fecha del dia actual.
+    Date fecha_alta = new Date(); // Con esta linea se actualiza la fecha del dia actual cuando damos de alta una nueva palabra.
 
-    Date fecha_modif;
+    Date fecha_modif = new Date();
 
     List<Ingles> ingles;
 
@@ -40,6 +40,5 @@ public class EspanoInputDto {
         e.setIngles(this.getIngles());
         return e;
     }
-
 
 }
