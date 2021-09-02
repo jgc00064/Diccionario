@@ -24,7 +24,7 @@ public class InglesServicio implements IInglesServicio{
 
     public InglesSimpleOutputDto saveIngles(InglesInputDto inglesInputDto){
 
-        Ingles in = inglesInputDto.dameIngles();
+        Ingles in = inglesInputDto.dameIngles(espanolRepositorio, inglesInputDto);
 
         inglesRepositorio.save(in);
 

@@ -36,7 +36,7 @@ public class Ingles{
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(name="id_español")
+    @JoinColumn(name="id_espanol")
     private Espanol espanol;
 
     public InglesOutputDto dameInglesOutputDto(EspanolRepositorio espanolRepositorio, InglesInputDto inglesInputDto) {
@@ -46,7 +46,7 @@ public class Ingles{
         e.setPalabra(this.getPalabra());
         e.setFecha_alta(this.getFecha_alta());
         e.setFecha_modif(this.getFecha_modif());
-        e.setEspanol(espanolRepositorio.findById(inglesInputDto.getId()).get());
+        e.setEspanol(this.getEspanol());
 
         return e;
     }
@@ -58,7 +58,7 @@ public class Ingles{
         e.setPalabra(this.getPalabra());
         e.setFecha_alta(this.getFecha_alta());
         e.setFecha_modif(this.getFecha_modif());
-        e.setEspanol(espanolRepositorio.findById(inglesInputDto.getId()).get());
+        e.setEspanol(this.getEspanol());
 
         return e;
     }
